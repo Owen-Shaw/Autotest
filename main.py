@@ -1,4 +1,5 @@
 from Library.Pyserial import SerialConnect
+from Library.OpenCV import ImageContrast
 
 
 def TVcontrol():
@@ -7,4 +8,9 @@ def TVcontrol():
 
 
 if __name__ == '__main__':
-    TVcontrol()
+    # 对比图像
+    image1 = "/Users/owenshaw/Documents/Git/Autotest/1.JPG"
+    image2 = "/Users/owenshaw/Documents/Git/Autotest/2.aJPG"
+    result = ImageContrast.Contrast(image1, image2)
+    baseline = 0.99
+    print(result)
